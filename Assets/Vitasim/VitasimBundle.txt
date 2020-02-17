@@ -1,0 +1,18 @@
+CompleteTank(Clone) (Complete.TankMovement)
+CompleteTank(Clone) (Complete.TankHealth)
+CompleteTank(Clone) (Complete.TankShooting)
+CompleteTank(Clone) (Complete.TankMovement)
+CompleteTank(Clone) (Complete.TankHealth)
+CompleteTank(Clone) (Complete.TankShooting)
+Text (UnityEngine.UI.Text)
+Text (UnityEngine.UI.Shadow)
+MessageCanvas (UnityEngine.UI.CanvasScaler)
+Name: MessageCanvas (UnityEngine.GameObject)
+eventCamera: 
+sortOrderPriority: 0
+renderOrderPriority: 0
+EventSystem (UnityEngine.EventSystems.BaseInput)
+GameManager (Complete.GameManager)
+Main Camera (UnityEngine.PostProcessing.PostProcessingBehaviour)
+CameraRig (Complete.CameraControl)
+CameraRig (BundleScript)

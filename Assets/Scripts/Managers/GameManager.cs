@@ -13,8 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject m_TankPrefab;         
     public TankManager[] m_Tanks;           
 
-
-    private int m_RoundNumber;              
+            
     private WaitForSeconds m_StartWait;     
     private WaitForSeconds m_EndWait;       
 /*    private TankManager m_RoundWinner;

@@ -35,18 +35,22 @@ public class BundleScript : MonoBehaviour
         {
             yield return new WaitForSeconds(2f);
             string[] scriptpaths = Directory.GetFiles(@"C:\Users\Fumse\Documents\Tanks\Assets\Scripts", "*.cs", SearchOption.AllDirectories);
+            string[] DLLpaths = Directory.GetFiles(@"C:\Users\Fumse\OneDrive\Skrivebord\DLL", "*.dll", SearchOption.AllDirectories);
+            for (int i = 0; i < DLLpaths.Length; i++)
+            {
+                DLLpaths[i] = "/r:" + DLLpaths[i] + " ";
+            }
             Process cmd = new Process();
             cmd.StartInfo = new ProcessStartInfo
             {
                 WindowStyle = ProcessWindowStyle.Normal,
                 FileName = "cmd.exe",
                 Arguments = @"/k C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe " +
-                @"/target:library /out:C:\Users\Fumse\OneDrive\Skrivebord\testbig.dll " +
-                @"/r:C:\Users\Fumse\OneDrive\Skrivebord\UnityEngine.dll " +
-                @"/r:C:\Users\Fumse\OneDrive\Skrivebord\UnityEditor.dll " +
-                @"/r:C:\Users\Fumse\OneDrive\Skrivebord\UnityEngine.UI.dll "
-                + string.Join(" ", scriptpaths),
-                Verb = "runas",
+                @"/target:library " +
+                @"/out:C:\Users\Fumse\OneDrive\Skrivebord\testbig.dll " +
+                string.Join(" ",DLLpaths) +
+                string.Join(" ", scriptpaths),
+                Verb = "runas"
             };
             cmd.Start();
         }

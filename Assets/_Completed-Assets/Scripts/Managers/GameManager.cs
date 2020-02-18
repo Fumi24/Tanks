@@ -39,7 +39,7 @@ namespace Complete
 
         private void SpawnAllTanks()
         {
-            // For all the tanks...
+            // For all the tanks... 
             for (int i = 0; i < m_Tanks.Length; i++)
             {
                 // ... create them, set their player number and references needed for control.

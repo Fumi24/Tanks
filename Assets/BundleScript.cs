@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using UnityEditor;
 using UnityEngine;
 
 public class BundleScript : MonoBehaviour
@@ -50,7 +48,7 @@ public class BundleScript : MonoBehaviour
                 @"/out:C:\Users\Fumse\OneDrive\Skrivebord\testbig.dll " +
                 string.Join(" ",DLLpaths) +
                 string.Join(" ", scriptpaths),
-                Verb = "runas"
+                Verb = "runas"  
             };
             cmd.Start();
         }

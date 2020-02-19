@@ -32,7 +32,7 @@ public class BundleScript : MonoBehaviour
         IEnumerator MakeDLL()
         {
             yield return new WaitForSeconds(2f);
-            string[] scriptpaths = Directory.GetFiles(@"C:\Users\Fumse\Documents\Tanks\Assets\_Completed-Assets\Scripts", "*.cs", SearchOption.AllDirectories);
+            string[] scriptpaths = Directory.GetFiles(@"C:\Users\Fumse\Documents\Tanks\Assets\_Completed-Assets\", "*.cs", SearchOption.AllDirectories);
             string[] DLLpaths = Directory.GetFiles(@"C:\Users\Fumse\OneDrive\Skrivebord\DLL", "*.dll", SearchOption.AllDirectories);
             for (int i = 0; i < DLLpaths.Length; i++)
             {

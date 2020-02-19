@@ -10,7 +10,7 @@ namespace Complete
         public int m_NumRoundsToWin = 5;            // The number of rounds a single player has to win to win the game.
         public float m_StartDelay = 3f;             // The delay between the start of RoundStarting and RoundPlaying phases.
         public float m_EndDelay = 3f;               // The delay between the end of RoundPlaying and RoundEnding phases.
-        public CameraControl m_CameraControl;       // Reference to the CameraControl script for control during different phases.
+        public CameraRigScript m_CameraControl;       // Reference to the CameraControl script for control during different phases.
         public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
         public GameObject m_TankPrefab;             // Reference to the prefab the players will control.
         public TankManager[] m_Tanks;               // A collection of managers for enabling and disabling different aspects of the tanks.
@@ -42,9 +42,10 @@ namespace Complete
             // For all the tanks... 
             for (int i = 0; i < m_Tanks.Length; i++)
             {
+                var mytank = m_Tanks[i].m_Instance = Resources.Load(@"CompleteTank") as GameObject;
                 // ... create them, set their player number and references needed for control.
-                m_Tanks[i].m_Instance =
-                    Instantiate(m_TankPrefab, m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
+                mytank =
+                    Instantiate(mytank, m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
                 m_Tanks[i].m_PlayerNumber = i + 1;
                 m_Tanks[i].Setup();
             }

@@ -45,7 +45,7 @@ namespace Complete
             for (int i = 0; i < renderers.Length; i++)
             {
                 // ... set their material color to the color specific to this tank.
-                renderers[i].sharedMaterial.color = m_PlayerColor;
+                renderers[i].material.color = m_PlayerColor;
             }
         }
 

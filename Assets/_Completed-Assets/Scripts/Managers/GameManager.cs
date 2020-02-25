@@ -42,10 +42,9 @@ namespace Complete
             // For all the tanks... 
             for (int i = 0; i < m_Tanks.Length; i++)
             {
-                var mytank = m_Tanks[i].m_Instance = Resources.Load(@"CompleteTank") as GameObject;
                 // ... create them, set their player number and references needed for control.
-                mytank =
-                    Instantiate(mytank, m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
+                m_Tanks[i].m_Instance =
+                    Instantiate(m_TankPrefab, m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
                 m_Tanks[i].m_PlayerNumber = i + 1;
                 m_Tanks[i].Setup();
             }

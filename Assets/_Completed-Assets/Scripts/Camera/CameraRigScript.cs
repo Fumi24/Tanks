@@ -21,7 +21,10 @@ namespace Complete
             m_Camera = GetComponentInChildren<Camera> ();
         }
 
-
+        private void Start()
+        {
+            m_Camera = GetComponentInChildren<Camera>();
+        }
         private void FixedUpdate ()
         {
             // Move the camera towards a desired position.
